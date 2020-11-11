@@ -120,6 +120,16 @@ public class Parser {
          Stmt.Enclosing = savedStmt;  // reset Stmt.Enclosing
          return donode;
 
+      // Added Case to check for a FOR loop
+      case Tag.FOR:
+         For fornode = new For(); // Create fornode
+         savedStmt = Stmt.Enclosing; Stmt.Enclosing = fornode; // match fornode to saved stmt
+         // Match the form FOR (stmt, allexpr, stmt)
+         match(Tag.FOR); match('('); s = stmt(); x = allexpr(); s1 = stmt(); match(')');
+         fornode.init(s, x, s1);
+         Stmt.Enclosing = savedStmt;
+         return fornode;
+
       case Tag.BREAK:
          match(Tag.BREAK); match(';');
          return new Break();

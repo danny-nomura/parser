@@ -1,0 +1,5 @@
+{
+	float x; float y; int a; int d;
+	x = a; y = d;
+	if( y != x) y = 4/y;
+}
