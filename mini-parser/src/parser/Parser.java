@@ -67,11 +67,6 @@ public class Parser {
       }
    }
 
-   // NOT A GIVEN FUNCTION
-   void decl() throws IOException {
-      // decl -> type id(terminal)
-   }
-
    Type type() throws IOException {
       Type p = (Type)look;  // expect look.tag == Tag.BASIC
       match(Tag.BASIC);
