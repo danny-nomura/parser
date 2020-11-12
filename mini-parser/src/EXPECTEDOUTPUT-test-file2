@@ -1,0 +1,21 @@
++--PROGRAM
+|  +--BLOCK
+|  |  +--STMTS
+|  |  |  +--ASSIGN
+|  |  |  |  +--Token x
+|  |  |  |  +--Token a
+|  |  |  +--STMTS
+|  |  |  |  +--ASSIGN
+|  |  |  |  |  +--Token y
+|  |  |  |  |  +--Token d
+|  |  |  |  +--STMTS
+|  |  |  |  |  +--IF
+|  |  |  |  |  |  +--Token !=
+|  |  |  |  |  |  |  +--Token y
+|  |  |  |  |  |  |  +--Token x
+|  |  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  |  +--Token y
+|  |  |  |  |  |  |  +--Token /
+|  |  |  |  |  |  |  |  +--Token 4
+|  |  |  |  |  |  |  |  +--Token y
+|  |  |  |  |  +--

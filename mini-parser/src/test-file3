@@ -1,0 +1,6 @@
+{
+	int totalTries; bool b;
+	b = true; totalTries = 100;
+	if( b != true ) totalTries = totalTries - 1;
+	else totalTries = totalTries + 1;
+}

@@ -1,0 +1,21 @@
++--PROGRAM
+|  +--BLOCK
+|  |  +--STMTS
+|  |  |  +--ASSIGN
+|  |  |  |  +--Token r
+|  |  |  |  +--Token a
+|  |  |  +--STMTS
+|  |  |  |  +--ASSIGN
+|  |  |  |  |  +--Token dd
+|  |  |  |  |  +--Token d
+|  |  |  |  +--STMTS
+|  |  |  |  |  +--WHILE
+|  |  |  |  |  |  +--Token <=
+|  |  |  |  |  |  |  +--Token dd
+|  |  |  |  |  |  |  +--Token r
+|  |  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  |  +--Token dd
+|  |  |  |  |  |  |  +--Token *
+|  |  |  |  |  |  |  |  +--Token 2
+|  |  |  |  |  |  |  |  +--Token dd
+|  |  |  |  |  +--

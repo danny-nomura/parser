@@ -2,6 +2,9 @@ package inter;
 
 import symbols.Type;
 
+// For class to extend the stmt functionality
+// Allows for interpretation of For loop
+// Form: For(stmt i; expr x; stmt s)
 public class For extends Stmt {
 
    Stmt id; Expr expr; Stmt incdecexpr;

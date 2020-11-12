@@ -1,0 +1,6 @@
+{
+	int currentCount; float upperLimit; float lowerLimit;
+	currentCount = 1; upperLimit = 1125.00; lowerLimit = 10.99;
+	while( currentCount < 10000 ) upperLimit = upperLimit + lowerLimit;
+	if(currentCount >= 100) upperLimit = 21.12; currentCount = currentCount + 1;
+}

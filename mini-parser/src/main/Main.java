@@ -9,13 +9,14 @@ import java.io.IOException;
 
 public class Main {
 
+	// Main
 	public static void main(String[] args) throws IOException {
-		Lexer lex = new Lexer();
-		Parser parse = new Parser(lex);
-		Prog tree = parse.program();
-		System.out.printf("\nSyntax tree:\n");
-		String treeStr = printTree(tree);
-		System.out.printf(treeStr);
+		Lexer lex = new Lexer();		// instantiate lexer
+		Parser parse = new Parser(lex); // instantiate parser on top of lexer
+		Prog tree = parse.program();    // define top level obj as parse tree
+		System.out.printf("\nGroup 4 Syntax tree:\n");
+		String treeStr = printTree(tree);	// Call printTree method
+		System.out.printf(treeStr);			// Print tree object
 	}
 
 	public static String printTree(Node root) {

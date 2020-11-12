@@ -1,0 +1,39 @@
++--PROGRAM
+|  +--BLOCK
+|  |  +--STMTS
+|  |  |  +--ASSIGN
+|  |  |  |  +--Token currentCount
+|  |  |  |  +--Token 1
+|  |  |  +--STMTS
+|  |  |  |  +--ASSIGN
+|  |  |  |  |  +--Token upperLimit
+|  |  |  |  |  +--Token 1125.0
+|  |  |  |  +--STMTS
+|  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  +--Token lowerLimit
+|  |  |  |  |  |  +--Token 10.99
+|  |  |  |  |  +--STMTS
+|  |  |  |  |  |  +--WHILE
+|  |  |  |  |  |  |  +--Token <
+|  |  |  |  |  |  |  |  +--Token currentCount
+|  |  |  |  |  |  |  |  +--Token 10000
+|  |  |  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  |  |  +--Token upperLimit
+|  |  |  |  |  |  |  |  +--Token +
+|  |  |  |  |  |  |  |  |  +--Token upperLimit
+|  |  |  |  |  |  |  |  |  +--Token lowerLimit
+|  |  |  |  |  |  +--STMTS
+|  |  |  |  |  |  |  +--IF
+|  |  |  |  |  |  |  |  +--Token >=
+|  |  |  |  |  |  |  |  |  +--Token currentCount
+|  |  |  |  |  |  |  |  |  +--Token 100
+|  |  |  |  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  |  |  |  +--Token upperLimit
+|  |  |  |  |  |  |  |  |  +--Token 21.12
+|  |  |  |  |  |  |  +--STMTS
+|  |  |  |  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  |  |  |  +--Token currentCount
+|  |  |  |  |  |  |  |  |  +--Token +
+|  |  |  |  |  |  |  |  |  |  +--Token currentCount
+|  |  |  |  |  |  |  |  |  |  +--Token 1
+|  |  |  |  |  |  |  |  +--

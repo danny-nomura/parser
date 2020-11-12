@@ -1,0 +1,26 @@
++--PROGRAM
+|  +--BLOCK
+|  |  +--STMTS
+|  |  |  +--ASSIGN
+|  |  |  |  +--Token b
+|  |  |  |  +--Token true
+|  |  |  +--STMTS
+|  |  |  |  +--ASSIGN
+|  |  |  |  |  +--Token totalTries
+|  |  |  |  |  +--Token 100
+|  |  |  |  +--STMTS
+|  |  |  |  |  +--IF-ELSE
+|  |  |  |  |  |  +--Token !=
+|  |  |  |  |  |  |  +--Token b
+|  |  |  |  |  |  |  +--Token true
+|  |  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  |  +--Token totalTries
+|  |  |  |  |  |  |  +--Token -
+|  |  |  |  |  |  |  |  +--Token totalTries
+|  |  |  |  |  |  |  |  +--Token 1
+|  |  |  |  |  |  +--ASSIGN
+|  |  |  |  |  |  |  +--Token totalTries
+|  |  |  |  |  |  |  +--Token +
+|  |  |  |  |  |  |  |  +--Token totalTries
+|  |  |  |  |  |  |  |  +--Token 1
+|  |  |  |  |  +--

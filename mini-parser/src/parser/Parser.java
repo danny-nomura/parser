@@ -12,7 +12,7 @@ public class Parser {
 
    void move() throws IOException { look = lex.scan(); }
 
-   void error(String s) { throw new Error("near line "+lex.line+": "+s); }
+   void error(String s) { throw new Error("near line " + lex.line + ": "+s); }
 
    void match(int t) throws IOException {
       if( look.tag == t ) move();
@@ -123,8 +123,8 @@ public class Parser {
    Expr allexpr() throws IOException {
       Expr x = andexpr();
 
-      // Error handling for incorrect type
-      if(x == null ) error(x.toString() + " has incorrect type");
+      // Error handling for incorrect type for allexpr
+      if(x == null ) error(x.toString() + " has incorrect type in allexpr");
 
       while( look.tag == Tag.OR ) {
          Token tok = look;  move();  x = new Or(tok, x, andexpr());
@@ -135,8 +135,8 @@ public class Parser {
    Expr andexpr() throws IOException {
       Expr x = equality();
 
-      // Error handling for incorrect type
-      if(x == null ) error(x.toString() + " has incorrect type");
+      // Error handling for incorrect type for andexpr
+      if(x == null ) error(x.toString() + " has incorrect type in andexpr");
 
       while( look.tag == Tag.AND ) {
          Token tok = look;  move();  x = new And(tok, x, equality());
@@ -147,8 +147,8 @@ public class Parser {
    Expr equality() throws IOException {
       Expr x = rel();
 
-      // Error handling for incorrect type
-      if(x == null ) error(x.toString() + " has incorrect type");
+      // Error handling for incorrect type for equality
+      if(x == null ) error(x.toString() + " has incorrect type in equality");
 
       while( look.tag == Tag.EQ || look.tag == Tag.NE ) {
          Token tok = look;  move();  x = new Rel(tok, x, rel());
@@ -159,8 +159,8 @@ public class Parser {
    Expr rel() throws IOException {
       Expr x = expr();
 
-      // Error handling for incorrect type
-      if(x == null ) error(x.toString() + " has incorrect type");
+      // Error handling for incorrect type in rel
+      if(x == null ) error(x.toString() + " has incorrect type in rel");
 
       switch( look.tag ) {
       case '<': case Tag.LE: case Tag.GE: case '>':
@@ -173,8 +173,8 @@ public class Parser {
    Expr expr() throws IOException {
       Expr x = term();
 
-      // Error handling for incorrect type
-      if(x == null ) error(x.toString() + " has incorrect type");
+      // Error handling for incorrect type in expr
+      if(x == null ) error(x.toString() + " has incorrect type in expr");
 
       while( look.tag == '+' || look.tag == '-' ) {
          Token tok = look;  move();  x = new Arith(tok, x, term());
@@ -186,7 +186,7 @@ public class Parser {
       Expr x = factor();
 
       // Error handling for incorrect type
-      if(x == null ) error(x.toString() + " has incorrect type");
+      if(x == null ) error(x.toString() + " has incorrect type in term");
 
       while(look.tag == '*' || look.tag == '/' ) {
          Token tok = look;  move();   x = new Arith(tok, x, factor());
@@ -199,7 +199,7 @@ public class Parser {
       // incdecexpr -> id++(terminal) | id--(terminal)
       Id id = top.get(look); // Create new id obj of lookahead char
       match(Tag.ID);         // Match ID, next is ++ or --
-      if( id == null ) error(look.toString() + " undeclared"); // Check if declared
+      if( id == null ) error(look.toString() + " is undeclared in incdecexpr"); // Check if declared
       switch(look.tag) {
          case '+':
             move(); match('+');
@@ -235,7 +235,7 @@ public class Parser {
       case Tag.ID:
          String s = look.toString();
          Id id = top.get(look);
-         if( id == null ) error(look.toString() + " undeclared");
+         if( id == null ) error(look.toString() + " is undeclared in factor");
          move(); return id;
       }
    }
