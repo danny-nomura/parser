@@ -3,7 +3,9 @@ To test our parser, follow the instructions below.
 --------Use (1) for command line compilation---------
 ------Use (2) for IntelliJ Idea IDE compilation------
 
-(1)To compile in command line, enter the src directory and run
+(1)To compile in command line
+
+  enter the src directory with 'cd parser\mini-parser\src'
 
   javac symbols/*.java
   javac inter/*.java
