@@ -171,8 +171,20 @@ public class Parser {
    }
 
    // NOT A GIVEN FUNCTION
-   Expr incdecexpr() throws IOException {
+   Id incdecexpr() throws IOException {
       // incdecexpr -> id++(terminal) | id--(terminal)
+      Id id = top.get(look); // Create new id obj of lookahead char
+      match(Tag.ID);         // Match ID, next is ++ or --
+      if( id == null ) error(look.toString() + " undeclared"); // Check if declared
+      switch(look.tag) {
+         case '+':
+            move(); match('+');
+            return id;
+         case '-':
+            move(); match('-');
+            return id;
+      }
+      return id;
    }
 
    Expr factor() throws IOException {
