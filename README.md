@@ -1,2 +1,33 @@
 # parser
 Compiler Design Predictive Parser
+
+To test our parser, follow the instructions below. 
+
+--------Use (1) for command line compilation---------
+------Use (2) for IntelliJ Idea IDE compilation------
+
+(1)To compile in command line
+
+  enter the src directory with 'cd parser\mini-parser\src'
+
+  javac symbols/*.java
+  javac inter/*.java
+  javac lexer/*.java
+  javac parser/*.java
+  javac main/Main.java
+
+  To run our lexer in the command line:
+
+  'java  main.Main < test_file1' -> compare with EXPECTEDOUTPUT-test-file1
+  'java  main.Main < test_file2' -> compare with EXPECTEDOUTPUT-test-file2
+  'java  main.Main < test_file3' -> compare with EXPECTEDOUTPUT-test-file3
+  'java  main.Main < test_file4' -> compare with EXPECTEDOUTPUT-test-file4
+
+
+
+(2) If you use IntelliJ Idea IDE
+  In the IntelliJ IDE, create a project and import the code. Then use
+  the below steps to build and run:
+  (a) Under "Run"->"Edit Configurations", put main.Main as main class.
+  Specify your test file in "Redirect input from".
+  (b) Click "Run"->"Run Main"
