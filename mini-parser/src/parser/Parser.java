@@ -10,33 +10,6 @@ public class Parser {
 
    public Parser(Lexer l) throws IOException { lex = l; move(); }
 
-   // NOT A GIVEN FUNCTION, pseudocode only currently
-   void predictiveParser(){
-      /*
-      let a be the first symbol of input;
-      letX be the top stack symbol;
-      while(X != $){ // stack is not empty
-         if(X == a){
-            pop stack, read next input symbol to a;
-         }
-         else if(X is terminal){
-            error();
-         }
-         else if(M[X,a] is an error entry){
-            error();
-         }
-         else if(M[X,a] = X-> Y1 Y2...Yk){
-            output the production X-> Y1 Y2...Yk;
-            pop the stack;
-            push Yk, Yk-1...Y1 onto the stack, with Y1 on the top of stack;
-         }
-         else{
-            let X be the top stack symbol;
-         }
-      }
-      */
-   }
-
    void move() throws IOException { look = lex.scan(); }
 
    void error(String s) { throw new Error("near line "+lex.line+": "+s); }
