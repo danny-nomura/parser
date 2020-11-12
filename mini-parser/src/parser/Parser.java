@@ -171,7 +171,7 @@ public class Parser {
    }
 
    // NOT A GIVEN FUNCTION
-   void incdecexpr() throws IOException {
+   Expr incdecexpr() throws IOException {
       // incdecexpr -> id++(terminal) | id--(terminal)
    }
 
