@@ -122,6 +122,10 @@ public class Parser {
 
    Expr allexpr() throws IOException {
       Expr x = andexpr();
+
+      // Error handling for incorrect type
+      if(x == null ) error(x.toString() + " has incorrect type");
+
       while( look.tag == Tag.OR ) {
          Token tok = look;  move();  x = new Or(tok, x, andexpr());
       }
@@ -130,6 +134,10 @@ public class Parser {
 
    Expr andexpr() throws IOException {
       Expr x = equality();
+
+      // Error handling for incorrect type
+      if(x == null ) error(x.toString() + " has incorrect type");
+
       while( look.tag == Tag.AND ) {
          Token tok = look;  move();  x = new And(tok, x, equality());
       }
@@ -138,6 +146,10 @@ public class Parser {
 
    Expr equality() throws IOException {
       Expr x = rel();
+
+      // Error handling for incorrect type
+      if(x == null ) error(x.toString() + " has incorrect type");
+
       while( look.tag == Tag.EQ || look.tag == Tag.NE ) {
          Token tok = look;  move();  x = new Rel(tok, x, rel());
       }
@@ -146,6 +158,10 @@ public class Parser {
 
    Expr rel() throws IOException {
       Expr x = expr();
+
+      // Error handling for incorrect type
+      if(x == null ) error(x.toString() + " has incorrect type");
+
       switch( look.tag ) {
       case '<': case Tag.LE: case Tag.GE: case '>':
          Token tok = look;  move();  return new Rel(tok, x, expr());
@@ -156,6 +172,10 @@ public class Parser {
 
    Expr expr() throws IOException {
       Expr x = term();
+
+      // Error handling for incorrect type
+      if(x == null ) error(x.toString() + " has incorrect type");
+
       while( look.tag == '+' || look.tag == '-' ) {
          Token tok = look;  move();  x = new Arith(tok, x, term());
       }
@@ -164,6 +184,10 @@ public class Parser {
 
    Expr term() throws IOException {
       Expr x = factor();
+
+      // Error handling for incorrect type
+      if(x == null ) error(x.toString() + " has incorrect type");
+
       while(look.tag == '*' || look.tag == '/' ) {
          Token tok = look;  move();   x = new Arith(tok, x, factor());
       }
